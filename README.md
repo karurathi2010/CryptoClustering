@@ -12,13 +12,14 @@
 *  Using for loop to computed the inertia with each possible value of k,and stored the values in a list as 'inertia'.
 *  Created a DataFrame with the 'k' and 'inertia' values and named it as 'elbow_df'.
 *  Using elbow_df ploted the line graph,and picked the best value as 4.
- ![3](https://github.com/karurathi2010/CryptoClustering/assets/53624041/955563ab-a877-4ad4-9be3-3d78b87d73c1)
- 
+
+ ![image](https://github.com/karurathi2010/CryptoClustering/assets/53624041/716f4541-c370-420b-b91c-a9251e419362)
+
 *  Initialized the K-Means model using the best value for k from the plot.
 *  Predicted the clusters to group the cryptocurrencies using the scaled data.
 *  Added a new column to the scaled DataFrame with the predicted clusters.
 *   Created a scatter plot using hvPlot by setting x value as "price_change_percentage_24h" and y value as "price_change_percentage_7d".
-*   ![4](https://github.com/karurathi2010/CryptoClustering/assets/53624041/8514b57e-c50a-4ef8-a3b0-8fdd4d3f283c)
+*  ![image](https://github.com/karurathi2010/CryptoClustering/assets/53624041/9b256dda-7dcd-4b0a-9b39-caaa76b2f7e8)
 
 *   Next,optimized the clusters using Principal Component Analysis.
 *   Created a PCA model instance and set 'n_components=3'.
@@ -27,16 +28,24 @@
 *   To find the best value for 'k' using the PCA data,followed the same procedure mentioned above.
 *   From the elbow curve the best value for 'k' is chosen as 4.
 
-  ![5](https://github.com/karurathi2010/CryptoClustering/assets/53624041/85def8ee-1555-40bb-a645-3362efa3b113)
+  ![image](https://github.com/karurathi2010/CryptoClustering/assets/53624041/27130d84-2384-479c-939a-06c040253ea5)
+
 
 *   Using this 'k' value,initialized the K-Means model for PCA data and predicted the clusters to group the cryptocurrencies.
 *   Added a new column to the pca dataframe with the predicted clusters.
 *   Created a scatter plot using hvPlot by setting x="PC1" and y="PC2".
 
-    ![6](https://github.com/karurathi2010/CryptoClustering/assets/53624041/6404f3cd-2e1e-4252-bf4c-55fed70b1bef)
+   ![image](https://github.com/karurathi2010/CryptoClustering/assets/53624041/d33326ae-7e74-4b93-b9c7-4ea25dc4d7f6)
+
 
 *   For comparing the cluster and pca methods a composite plot is created.
   
+![image](https://github.com/karurathi2010/CryptoClustering/assets/53624041/9b302e70-ceb5-4a0f-a073-5a8145bd1b7f)
+
+Using this plot a comparison report is generated with the following conclusions:
+
+Here in the Original_Scatter_plot(with more features) the points are loosely packed.It indicates that with more features, K-Means tend to create clusters that are less compact and more spread out. This could be due to the higher dimensionality leading to more complex data relationships that K-Means struggle to fully capture without clear feature relevance. But in the case of PCA-Scatter_Plot, the points are more closely packed and some are even overlapping. It indicates that PCA reduces the dimensionality while retaining most of the data variance, which can lead to more distinct clusters when using K-Means. So, we can conclude that using fewer features results in better-defined clusters with K-Means. The closer packing and potential overlap of points indicate that K-Means can more effectively partition the data into distinct clusters when the dimensionality is reduced.
+
 
 
   
